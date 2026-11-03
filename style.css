@@ -1,0 +1,45 @@
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;height:100%;overscroll-behavior:none}
+body{font-family:system-ui,-apple-system,"Noto Sans JP",sans-serif;color:#4a4560;background:linear-gradient(160deg,#fdf3ff,#e9f7ff 55%,#fff6e6);user-select:none;-webkit-user-select:none;touch-action:manipulation}
+main{height:100dvh;display:flex;flex-direction:column;align-items:center;padding:calc(env(safe-area-inset-top) + 10px) 16px calc(env(safe-area-inset-bottom) + 14px);gap:8px;max-width:520px;margin:auto}
+h1{margin:4px 0;font-size:18px;color:#8d7bd6;letter-spacing:.05em}
+#info{width:100%;text-align:center;background:#ffffffb0;border-radius:24px;padding:12px 14px;box-shadow:0 4px 16px #c9b6ff40}
+#big{font-size:64px;font-weight:800;line-height:1.1;color:#6f5fc0}
+#sub{min-height:22px;font-size:14px;margin-top:2px}
+#bar{height:10px;background:#efe8ff;border-radius:9px;margin-top:8px;overflow:hidden}
+#fill{display:block;height:100%;width:0;background:linear-gradient(90deg,#a8e6cf,#ffd3e0);border-radius:9px}
+#ctrl{width:100%;display:flex;flex-direction:column;gap:6px;align-items:center;min-height:84px}
+.row{display:flex;align-items:center;gap:8px;font-size:15px}
+input[type=number],select{font:inherit;font-size:20px;font-weight:700;width:84px;text-align:center;padding:6px;border:2px solid #d9cdff;border-radius:14px;background:#fff;color:#4a4560}
+select{width:70px}
+.mini{width:44px;height:44px;border:0;border-radius:50%;background:#d9f3ff;color:#4a4560;font-size:22px}
+.mini:active{background:#b8e6ff}
+#tap{flex:1;min-height:0;width:min(78vw,300px);max-height:300px;aspect-ratio:1;margin:auto 0;border:0;border-radius:50%;font-size:40px;font-weight:800;letter-spacing:.1em;color:#fff;background:radial-gradient(circle at 35% 30%,#ffd3e0,#c9b6ff);box-shadow:0 10px 24px #c9b6ff90,inset 0 -6px 12px #0000001a;transition:transform .08s}
+#tap:active,#tap.hit{transform:scale(.94);background:radial-gradient(circle at 35% 30%,#d4f5e6,#9ad9f5)}
+#tap.beat{transform:scale(1.06);background:radial-gradient(circle at 35% 30%,#fff1a8,#ffb7c5)}
+#modes{width:100%;display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+#modes button{border:0;border-radius:16px;padding:14px 2px;font-size:13px;font-weight:700;background:#fff;color:#8d7bd6;box-shadow:0 2px 8px #c9b6ff30}
+#modes button.on{background:#c9b6ff;color:#fff}
+#clear{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:#fff8;backdrop-filter:blur(6px);z-index:9;text-align:center}
+#clear[hidden]{display:none}
+#clear div{background:#fff;border-radius:28px;padding:28px 36px;box-shadow:0 10px 40px #c9b6ff80;animation:pop .5s}
+#clear b{font-size:40px;color:#ff8fab}
+@keyframes pop{from{transform:scale(.3);opacity:0}}
+.c{position:fixed;top:-30px;font-size:26px;z-index:10;animation:fall linear forwards;pointer-events:none}
+@keyframes fall{to{transform:translateY(110vh) rotate(540deg)}}
+
+.opt{flex-wrap:wrap;justify-content:center;gap:6px 14px;font-size:14px}
+.opt select,.opt input[type=number]{width:62px;font-size:17px;padding:4px}
+.opt input[type=checkbox]{width:20px;height:20px;vertical-align:middle}
+#gauge{position:relative;height:30px;margin:12px 6px 22px;background:#ffe3ea;border-radius:12px}
+#zone{position:absolute;left:25%;width:50%;top:0;bottom:0;background:#bff0dc;border-radius:10px}
+#needle{position:absolute;top:-5px;bottom:-5px;left:50%;width:6px;margin-left:-3px;background:#8d7bd6;border-radius:4px;transition:left .15s,background .15s,opacity .2s}
+.gl{position:absolute;bottom:-19px;font-size:11px;color:#8d7bd6}.gl.l{left:0}.gl.r{right:0}.gl.c{left:50%;transform:translateX(-50%);font-weight:700}
+#pend{position:relative;height:112px;margin-top:6px}
+#rod{position:absolute;left:50%;top:6px;width:4px;height:86px;margin-left:-2px;background:#c9b6ff;border-radius:3px;transform-origin:50% 0}
+#rod i{position:absolute;bottom:-16px;left:50%;margin-left:-17px;width:34px;height:34px;border-radius:50%;background:var(--bc,#ffb7c5);box-shadow:0 3px 8px #0002}
+#pivot{position:absolute;left:50%;top:0;width:14px;height:14px;margin-left:-7px;border-radius:50%;background:#8d7bd6}
+#dots{display:flex;justify-content:center;gap:9px;margin-top:6px}
+#dots span{width:18px;height:18px;border-radius:50%;background:#eee;transition:transform .08s,background .08s}
+#dots span.on{background:var(--c);transform:scale(1.35)}
+#tap.beat{background:radial-gradient(circle at 35% 30%,#fff,var(--bc))}

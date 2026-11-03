@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<title>テンポチェッカー</title>
+<meta name="theme-color" content="#fdf3ff">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" href="./icon-192.png">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main>
+  <header><h1 id="title"></h1></header>
+  <section id="info">
+    <div id="big">--</div>
+    <div id="sub"></div>
+    <div id="bar"><i id="fill"></i></div>
+    <div id="gauge"><div id="zone"></div><i id="needle"></i><span class="gl l">遅い</span><span class="gl c" id="gc"></span><span class="gl r">速い</span></div>
+    <div id="pend"><div id="rod"><i></i></div><b id="pivot"></b></div>
+    <div id="dots"></div>
+  </section>
+  <section id="ctrl">
+    <div class="row" id="rTarget">
+      <span id="lblT">目標</span>
+      <button class="mini" id="tm">−</button>
+      <input id="tv" type="number" inputmode="numeric" min="30" max="300">
+      <button class="mini" id="tp">＋</button>
+      <span>BPM</span>
+    </div>
+    <div class="row opt" id="rOpt">
+      <span id="gTol">許容 ±<select id="tol"><option>3</option><option>5</option><option>10</option><option>15</option><option>20</option></select></span>
+      <span id="gGoal">時間<input id="gv" type="number" inputmode="numeric" min="5" max="600">秒</span>
+      <span id="gMeter">拍子<select id="mt"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select></span>
+      <label id="gSnd"><input type="checkbox" id="snd"> 音</label>
+    </div>
+  </section>
+  <button id="tap">TAP</button>
+  <nav id="modes">
+    <button data-m="challenge">チャレンジ</button>
+    <button data-m="measure">計測</button>
+    <button data-m="compare">比較</button>
+    <button data-m="metro">メトロノーム</button>
+  </nav>
+</main>
+<div id="clear" hidden><div><b>🎉 CLEAR! 🎉</b><p>チューニング完了！</p><small>タップで閉じる</small></div></div>
+<script src="./app.js"></script>
+</body>
+</html>
